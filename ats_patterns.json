@@ -15,7 +15,7 @@
       "api": "boards-api.greenhouse.io/v1/boards/{slug}/jobs",
       "verification_method": "api",
       "docs_or_evidence": "https://developers.greenhouse.io/job-board/",
-      "verified": false
+      "verified": true
     },
     {
       "id": "lever",
@@ -28,7 +28,7 @@
       "api": "api.lever.co/v0/postings/{slug}?mode=json",
       "verification_method": "api",
       "docs_or_evidence": "https://lever.co/api",
-      "verified": false
+      "verified": true
     },
     {
       "id": "ashby",
@@ -40,7 +40,7 @@
       "api": "api.ashbyhq.com/posting-api/job-board/{slug}",
       "verification_method": "api",
       "docs_or_evidence": "https://developers.ashbyhq.com/",
-      "verified": false
+      "verified": true
     },
     {
       "id": "workable",

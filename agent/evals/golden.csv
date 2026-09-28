@@ -1,0 +1,32 @@
+company_name,source,listed_url,expected_destination,expected_destination_type,expected_ats_provider,expected_ats_slug,expected_confidence,stratification,notes
+Ably,remoteintech,http://jobs.ably.io,https://jobs.lever.co/ably,ats_board,lever,ably,0.95,ats_seed,Lever board
+Anomali,remoteintech,jobs.lever.co/anomali,https://jobs.lever.co/anomali,ats_board,lever,anomali,0.95,ats_seed,Lever board
+Deel,remoteintech,jobs.ashbyhq.com/Deel,https://jobs.ashbyhq.com/Deel,ats_board,ashby,Deel,0.95,ats_seed,Ashby board (preserve case)
+ConsenSys,remoteintech,boards.greenhouse.io/consensys/jobs/1990589,https://boards.greenhouse.io/consensys,ats_board,greenhouse,consensys,0.90,ats_seed,Single-job URL normalized to board
+10up,remoteintech,https://10up.com/careers/,https://10up.com/careers/,custom_page,,,0.90,custom_page,Custom careers page
+GitHub,remoteintech,github.com/about/jobs,https://github.com/about/jobs,custom_page,,,0.90,custom_page,Custom careers page
+Automattic,remoteintech,automattic.com/work-with-us/,https://automattic.com/work-with-us/,custom_page,,,0.90,custom_page,Custom careers page
+Akamai,remoteintech,https://www.akamai.com/careers]],https://www.akamai.com/careers,custom_page,,,0.85,malformed_seed,Trailing brackets stripped
+Alley,remoteintech,https://alley.co/careers/,,https://alley.co/careers/,custom_page,,,0.85,malformed_seed,Trailing comma stripped
+Carmatec,remoteintech,https://www.carmatec.com/careers/.,https://www.carmatec.com/careers/,custom_page,,,0.85,malformed_seed,Trailing dot stripped
+42 Technologies,remoteintech,angel.co/company/42,,,,,0.80,aggregator_seed,Aggregator - move to fallback
+Transloadit,remoteintech,x.com/transloadit,,,,,0.80,social_seed,Social - move to fallback
+Whitespectre,remoteintech,glassdoor.com/Reviews/Whitespectre,,,,,0.80,aggregator_seed,Aggregator - move to fallback
+Trello,remoteintech,www.atlassian.com/company/careers,https://www.atlassian.com/company/careers,custom_page,,,0.90,acquired,Acquired by Atlassian
+MetaMask,remoteintech,boards.greenhouse.io/consensys/jobs/1990589,https://boards.greenhouse.io/consensys,ats_board,greenhouse,consensys,0.85,acquired,Parent company's board
+addstructure,remoteintech,https://www.bazaarvoice.com,,,,,0.70,ambiguous,Name/domain mismatch - needs review
+npm,remoteintech,https://www.npmjs.com/jobs?utm_source=nodeweekly&utm_medium=email,https://www.npmjs.com/jobs,custom_page,,,0.85,malformed_seed,Tracking params stripped
+Appen,remoteintech,jobs.lever.co/appen-2,https://jobs.lever.co/appen-2,ats_board,lever,appen-2,0.95,ats_seed,Lever board
+CircleCI,remoteintech,boards.greenhouse.io/circleci,https://boards.greenhouse.io/circleci,ats_board,greenhouse,circleci,0.95,ats_seed,Greenhouse board
+Findem,remoteintech,jobs.lever.co/findem,https://jobs.lever.co/findem,ats_board,lever,findem,0.95,ats_seed,Lever board
+Kraken,remoteintech,jobs.lever.co/kraken,https://jobs.lever.co/kraken,ats_board,lever,kraken,0.95,ats_seed,Lever board
+Luxor Technology,remoteintech,jobs.ashbyhq.com/luxor,https://jobs.ashbyhq.com/luxor,ats_board,ashby,luxor,0.95,ats_seed,Ashby board
+15Five,remoteintech,https://www.15five.com/about/careers,https://www.15five.com/about/careers,custom_page,,,0.90,custom_page,Custom careers page
+1Password,remoteintech,https://1password.com/careers,https://1password.com/careers,custom_page,,,0.90,custom_page,Custom careers page
+90 Seconds,remoteintech,https://90seconds.com/about/careers/,https://90seconds.com/about/careers/,custom_page,,,0.90,custom_page,Custom careers page
+Acquia,remoteintech,https://www.acquia.com/careers/open-positions,https://www.acquia.com/careers/open-positions,custom_page,,,0.90,custom_page,Custom careers page
+activecampaign,remoteintech,https://www.activecampaign.com/careers,https://www.activecampaign.com/careers,custom_page,,,0.90,custom_page,Custom careers page
+Focusnetworks,remoteintech,https://focusnetworks.enlizt.me/?utm_source=jooble&utm_medium=cpc&utm_campaign=jooble,https://focusnetworks.enlizt.me/,custom_page,,,0.85,malformed_seed,Tracking params stripped
+Mercari,remoteintech,https://careers.mercari.com/job-categories/engineering/?utm_source=remoteintech.company&utm_medium=Referral&utm_campaign=remote-in-tech,https://careers.mercari.com/job-categories/engineering/,custom_page,,,0.85,malformed_seed,Tracking params stripped
+Teamflow,remoteintech,https://teamflowhq.notion.site/Teamflow-Job-Board-225515ad0f824ef8920e9a4db7c7abbf?utm_source=remoteintech,https://teamflowhq.notion.site/Teamflow-Job-Board-225515ad0f824ef8920e9a4db7c7abbf,custom_page,,,0.85,malformed_seed,Notion page with tracking params
+Adaface,remoteintech,https://angel.co/company/adaface/jobs,,,,,0.80,aggregator_seed,Aggregator - move to fallback

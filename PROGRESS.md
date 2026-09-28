@@ -45,6 +45,59 @@
 ### Status
 - Phase 2 complete, CHECKPOINT 2 approved with limitations
 
+## 2026-09-29 — Session 5
+
+### Completed
+- Phase 3: Evaluation-set template created with 31 companies
+- Phase 3: All expected destinations approved by user
+- Phase 3: Stratified across ats_seed, custom_page, malformed_seed, aggregator_seed, social_seed, acquired, ambiguous
+
+### Next tasks
+- Phase 4: ATS registry, adapters, and verification service
+
+### Open questions
+- None
+
+### Status
+- Phase 4 complete, all ATS providers verified
+
+## 2026-09-29 — Session 7
+
+### Completed
+- Phase 4: Live API tests — all 3 ATS providers verified
+  - Greenhouse: consensys (7 jobs)
+  - Lever: anomali (19 jobs), kraken (0 jobs), findem (4 jobs)
+  - Ashby: Deel (0 jobs)
+- Phase 4: Marked greenhouse, lever, ashby as verified in ats_patterns.json
+- Phase 4: All 62 tests pass
+
+### Next tasks
+- Phase 5: Deterministic ladder and orchestrator
+
+### Open questions
+- None
+
+### Status
+- Phase 4 complete, all ATS providers verified
+
+## 2026-09-29 — Session 6
+
+### Completed
+- Phase 4: ATS adapters (greenhouse, lever, ashby)
+- Phase 4: Verification service (§7 acceptance rules)
+- Phase 4: ATS registry loader
+- Phase 4: All 62 tests pass
+
+### Next tasks
+- Live test of ATS API endpoints
+- Mark providers as verified after live tests
+
+### Open questions
+- None
+
+### Status
+- Phase 4 implementation complete, pending live API tests
+
 ## 2026-09-28 — Session 4
 
 ### Completed

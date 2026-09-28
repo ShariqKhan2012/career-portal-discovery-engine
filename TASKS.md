@@ -35,14 +35,15 @@
 - [x] **CHECKPOINT 2** — approved with limitations (WWR blocked by Cloudflare)
 
 ## Phase 3 — Evaluation-set template
-- [ ] Create agent/evals/golden.csv template
-- [ ] Pause for user labels
+- [x] Create agent/evals/golden.csv template
+- [x] Pause for user labels — approved 2026-09-29
 
 ## Phase 4 — ATS registry, adapters, and verification
-- [ ] Verify API endpoint hypotheses
-- [ ] Build ATS adapters (match, extract_slug, verify_board)
-- [ ] Build verification service (§7)
-- [ ] Mark providers as verified after live tests
+- [x] Build ATS adapters (greenhouse, lever, ashby)
+- [x] Build verification service (§7)
+- [x] Build ATS registry loader
+- [x] Verify API endpoint hypotheses (live test)
+- [x] Mark providers as verified after live tests
 
 ## Phase 5 — Deterministic ladder and orchestrator
 - [ ] Build stages 1-5
