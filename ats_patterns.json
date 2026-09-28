@@ -1,0 +1,305 @@
+{
+  "providers": [
+    {
+      "id": "greenhouse",
+      "url_patterns": [
+        "boards.greenhouse.io/{slug}",
+        "job-boards.greenhouse.io/{slug}",
+        "boards.eu.greenhouse.io/{slug}"
+      ],
+      "embed_signatures": [
+        "greenhouse.io/embed/job_board?for={slug}",
+        "grnhse"
+      ],
+      "script_signatures": ["grnhse"],
+      "api": "boards-api.greenhouse.io/v1/boards/{slug}/jobs",
+      "verification_method": "api",
+      "docs_or_evidence": "https://developers.greenhouse.io/job-board/",
+      "verified": false
+    },
+    {
+      "id": "lever",
+      "url_patterns": [
+        "jobs.lever.co/{slug}",
+        "jobs.eu.lever.co/{slug}"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": "api.lever.co/v0/postings/{slug}?mode=json",
+      "verification_method": "api",
+      "docs_or_evidence": "https://lever.co/api",
+      "verified": false
+    },
+    {
+      "id": "ashby",
+      "url_patterns": [
+        "jobs.ashbyhq.com/{slug}"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": "api.ashbyhq.com/posting-api/job-board/{slug}",
+      "verification_method": "api",
+      "docs_or_evidence": "https://developers.ashbyhq.com/",
+      "verified": false
+    },
+    {
+      "id": "workable",
+      "url_patterns": [
+        "apply.workable.com/{slug}",
+        "{slug}.workable.com"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": "apply.workable.com/api/v1/widget/accounts/{slug}",
+      "verification_method": "api",
+      "docs_or_evidence": "https://help.workable.com/",
+      "verified": false
+    },
+    {
+      "id": "smartrecruiters",
+      "url_patterns": [
+        "jobs.smartrecruiters.com/{slug}",
+        "careers.smartrecruiters.com/{slug}"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": "api.smartrecruiters.com/v1/companies/{slug}/postings",
+      "verification_method": "api",
+      "docs_or_evidence": "https://dev.smartrecruiters.com/",
+      "verified": false
+    },
+    {
+      "id": "workday",
+      "url_patterns": [
+        "{tenant}.wd{n}.myworkdayjobs.com/{site}"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "icims",
+      "url_patterns": [
+        "careers-{slug}.icims.com"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "recruitee",
+      "url_patterns": [
+        "{slug}.recruitee.com"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": "{slug}.recruitee.com/api/offers/",
+      "verification_method": "api",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "teamtailor",
+      "url_patterns": [
+        "{slug}.teamtailor.com"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "bamboohr",
+      "url_patterns": [
+        "{slug}.bamboohr.com/careers"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "rippling",
+      "url_patterns": [
+        "{slug}.rippling-ats.com",
+        "ats.rippling.com/{slug}"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "breezy",
+      "url_patterns": [
+        "{slug}.breezy.hr"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": "{slug}.breezy.hr/json",
+      "verification_method": "api",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "jobvite",
+      "url_patterns": [
+        "jobs.jobvite.com/{slug}"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "personio",
+      "url_patterns": [
+        "{slug}.jobs.personio.de",
+        "{slug}.jobs.personio.com"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": "{slug}.jobs.personio.de/xml",
+      "verification_method": "api",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "jazzhr",
+      "url_patterns": [
+        "{slug}.applytojob.com"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "gupy",
+      "url_patterns": [
+        "{slug}.gupy.io"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "zoho_recruit",
+      "url_patterns": [
+        "{slug}.zohorecruit.com"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "pinpoint",
+      "url_patterns": [
+        "{slug}.pinpointhq.com"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "homerun",
+      "url_patterns": [
+        "{slug}.homerun.co"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "join",
+      "url_patterns": [
+        "join.com/companies/{slug}"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "hirehive",
+      "url_patterns": [
+        "my.hirehive.io/{slug}"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "jobscore",
+      "url_patterns": [
+        "careers.jobscore.com/careers/{slug}"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    },
+    {
+      "id": "eightfold",
+      "url_patterns": [
+        "{slug}.eightfold.ai/careers"
+      ],
+      "embed_signatures": [],
+      "script_signatures": [],
+      "api": null,
+      "verification_method": "board_page",
+      "docs_or_evidence": "",
+      "verified": false
+    }
+  ],
+  "aggregator_hosts": [
+    "linkedin.com",
+    "glassdoor.com",
+    "angel.co",
+    "wellfound.com",
+    "x.com",
+    "twitter.com",
+    "ycombinator.com",
+    "remoteok.io",
+    "remoteok.com",
+    "weworkremotely.com",
+    "remoters.net",
+    "weloveremotejobs.com",
+    "welcometothejungle.com"
+  ]
+}
