@@ -28,4 +28,78 @@
 - None
 
 ### Status
-- Phase 1 implementation complete, pending test run
+- Phase 1 complete, CHECKPOINT 1 approved
+
+## 2026-09-28 — Session 2
+
+### Completed
+- Phase 1: All tests pass (13/13, zero warnings)
+- Phase 1: CHECKPOINT 1 approved
+
+### Next tasks
+- Phase 2: Ingestion, normalization, and deduplication
+
+### Open questions
+- None
+
+### Status
+- Phase 2 complete, CHECKPOINT 2 approved with limitations
+
+## 2026-09-28 — Session 4
+
+### Completed
+- Phase 2: Remote In Tech ingest — 884 companies, 43 mismatches, 0 duplicates
+- Phase 2: WWR ingest — blocked by Cloudflare (403)
+- Phase 2: All 49 tests pass
+
+### Key findings
+- Remote In Tech: GitHub repo (remoteintech/remote-jobs) has structured markdown files
+  with YAML frontmatter (title, slug, website, careers_url, region, etc.)
+- WWR: Blocked by Cloudflare WAF (403). The page is also JavaScript-rendered.
+  Per master prompt: "Never bypass CAPTCHAs, login walls, paywalls, or other
+  access controls. If blocked, record `blocked` and move on."
+- 43 name/domain mismatches detected in Remote In Tech (e.g., addstructure → bazaarvoice.com)
+- 0 duplicates within Remote In Tech (all 884 companies have unique domains)
+
+### Ingestion limitations
+- WWR is blocked by Cloudflare. Cannot ingest without bypassing the WAF.
+- The webfetch tool can access WWR (likely uses a headless browser), but
+  direct HTTP requests are blocked.
+- WWR also requires JavaScript rendering (the static HTML is a shell).
+
+### Next tasks
+- Phase 3: Evaluation-set template
+- Phase 4: ATS registry, adapters, and verification
+
+### Open questions
+- None
+
+### Status
+- Phase 2 complete, CHECKPOINT 2 approved with limitations
+
+## 2026-09-28 — Session 3
+
+### Completed
+- Phase 2: Source inspection (remoteintech → GitHub repo, weworkremotely → HTML)
+- Phase 2: URL normalization (src/normalize.py) — handles all Appendix B cases
+- Phase 2: Registrable domain computation (src/domains.py) — uses tldextract
+- Phase 2: Name/domain mismatch detection (src/mismatch.py)
+- Phase 2: Deduplication (src/dedup.py) — domain identity, fuzzy matches go to review
+- Phase 2: Source adapters (adapters/remoteintech.py, adapters/weworkremotely.py)
+- Phase 2: CLI ingest command
+- Phase 2: All 49 tests pass
+
+### Key findings
+- Remote In Tech: GitHub repo (remoteintech/remote-jobs) has structured markdown files
+  with YAML frontmatter (title, slug, website, careers_url, region, etc.)
+- WWR: 100 companies in server-rendered HTML, each with a profile page at /company/{slug}
+
+### Next tasks
+- Run ingest and verify
+- CHECKPOINT 2
+
+### Open questions
+- None
+
+### Status
+- Phase 2 implementation complete, pending ingest run

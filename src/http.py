@@ -97,13 +97,18 @@ class RateLimiter:
 
 
 class RobotsChecker:
-    """robots.txt checker with per-domain caching."""
+    """robots.txt checker with per-domain caching.
+
+    Fetches robots.txt through the HTTP layer (with caching) and parses
+    it with urllib.robotparser. If robots.txt is unreachable, allows
+    by default (per RFC 9309).
+    """
 
     def __init__(self):
         self._parsers: dict[str, RobotFileParser] = {}
         self._lock = asyncio.Lock()
 
-    async def can_fetch(self, url: str, user_agent: str) -> bool:
+    async def can_fetch(self, url: str, user_agent: str, http_client: httpx.AsyncClient) -> bool:
         """Check if the user agent is allowed to fetch the URL."""
         parsed = httpx.URL(url)
         robots_url = f"{parsed.scheme}://{parsed.host}/robots.txt"
@@ -111,13 +116,14 @@ class RobotsChecker:
         async with self._lock:
             if robots_url not in self._parsers:
                 parser = RobotFileParser()
-                parser.set_url(robots_url)
                 try:
-                    # robotparser is sync; run in thread to avoid blocking
-                    loop = asyncio.get_event_loop()
-                    await loop.run_in_executor(None, parser.read)
+                    response = await http_client.get(robots_url)
+                    if response.status_code == 200:
+                        parser.parse(response.text.splitlines())
+                    else:
+                        # If robots.txt is unreachable, allow by default
+                        return True
                 except Exception:
-                    # If robots.txt is unreachable, allow by default
                     return True
                 self._parsers[robots_url] = parser
 
@@ -136,9 +142,19 @@ class HttpClient:
         self.config = config
         self.cache = DiskCache(config.cache_dir)
         self.rate_limiter = RateLimiter(config.requests_per_second_per_domain)
+        self._domain_limiters: dict[str, RateLimiter] = {}
         self.robots_checker = RobotsChecker()
         self._semaphore = asyncio.Semaphore(config.global_concurrency)
         self._client: Optional[httpx.AsyncClient] = None
+
+    def _get_rate_limiter(self, domain: str) -> RateLimiter:
+        """Get the rate limiter for a domain, with per-domain overrides."""
+        if domain not in self._domain_limiters:
+            rate = self.config.per_domain_rate_limits.get(
+                domain, self.config.requests_per_second_per_domain
+            )
+            self._domain_limiters[domain] = RateLimiter(rate)
+        return self._domain_limiters[domain]
 
     async def __aenter__(self) -> HttpClient:
         self._client = httpx.AsyncClient(
@@ -161,19 +177,20 @@ class HttpClient:
         if not force_refresh:
             cached = self.cache.get(url)
             if cached:
+                cached.pop("from_cache", None)
                 return FetchResult(**cached, from_cache=True)
 
         # Enforce robots.txt
-        if not await self.robots_checker.can_fetch(url, self.config.user_agent):
+        if not await self.robots_checker.can_fetch(url, self.config.user_agent, self._client):
             raise HttpError(
                 f"robots.txt disallows fetching {url}",
                 ErrorClass.ROBOTS_DISALLOWED,
                 url,
             )
 
-        # Rate limit per domain
+        # Rate limit per domain (with per-domain overrides for CDNs)
         domain = httpx.URL(url).host or ""
-        await self.rate_limiter.acquire(domain)
+        await self._get_rate_limiter(domain).acquire(domain)
 
         # Fetch with retries and exponential backoff
         last_error: Optional[HttpError] = None

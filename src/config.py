@@ -23,6 +23,11 @@ class Config(BaseModel):
     global_concurrency: int = Field(
         default=8, description="Global concurrent request limit"
     )
+    # Per-domain overrides for CDNs and APIs with different limits
+    per_domain_rate_limits: dict[str, float] = Field(
+        default={"raw.githubusercontent.com": 10.0, "api.github.com": 0.5},
+        description="Per-domain rate limit overrides (requests/sec)",
+    )
 
     # --- Timeouts (§5) ---
     default_timeout_seconds: float = Field(default=30.0)

@@ -21,17 +21,18 @@
 - [x] Create ats_patterns.json (seed data)
 - [x] Create tests/ (scaffolding)
 - [x] Create docs/decisions/ (decision records)
-- [ ] Run tests and verify
-- [ ] **CHECKPOINT 1** — harness files, permissions, initial test results
+- [x] Run tests and verify
+- [x] **CHECKPOINT 1** — approved 2026-09-28
 
 ## Phase 2 — Ingestion, normalization, and deduplication
-- [ ] Check for structured sources (remoteintech, weworkremotely)
-- [ ] Build source adapters
-- [ ] URL normalization (strip punctuation, expand shorteners, strip tracking)
-- [ ] Registrable domain computation
-- [ ] Name/domain mismatch detection
-- [ ] Deduplication by domain identity
-- [ ] **CHECKPOINT 2** — counts, unique count, overlap, merges, cleaned URLs
+- [x] Check for structured sources (remoteintech → GitHub repo, weworkremotely → HTML)
+- [x] Build source adapters (remoteintech.py, weworkremotely.py)
+- [x] URL normalization (strip punctuation, expand shorteners, strip tracking)
+- [x] Registrable domain computation (tldextract)
+- [x] Name/domain mismatch detection
+- [x] Deduplication by domain identity
+- [x] Run ingest and verify
+- [x] **CHECKPOINT 2** — approved with limitations (WWR blocked by Cloudflare)
 
 ## Phase 3 — Evaluation-set template
 - [ ] Create agent/evals/golden.csv template
