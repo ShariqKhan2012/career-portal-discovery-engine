@@ -19,6 +19,59 @@ from .domains import registrable_domain
 logger = get_logger(__name__)
 
 
+async def _run(batch_size: int, config: Config, db: Database) -> None:
+    """Run the discovery pipeline on a batch of companies."""
+    from .stages.seed import SeedStage
+    from .stages.ats_verify import ATSVerifyStage
+    from .stages.website import WebsiteStage
+    from .stages.crawl import CrawlStage
+    from .stages.slug_probe import SlugProbeStage
+    from .orchestrator import Orchestrator
+    from .models import DiscoveryRun, Status
+
+    # Create a run record
+    import uuid
+    run_id = str(uuid.uuid4())[:8]
+    run = DiscoveryRun(run_id=run_id, code_version="0.1.0")
+    db.create_run(run)
+
+    # Build the stage ladder
+    stages = [
+        SeedStage(),
+        ATSVerifyStage(),
+        WebsiteStage(),
+        CrawlStage(),
+        SlugProbeStage(),
+    ]
+
+    orchestrator = Orchestrator(config, db, stages)
+
+    # Get pending companies
+    company_ids = db.get_all_company_ids()
+    pending = []
+    for cid in company_ids:
+        dest = db.get_destination(cid)
+        if not dest or dest.status == Status.PENDING:
+            company = db.get_company(cid)
+            if company:
+                pending.append(company)
+
+    # Limit to batch size
+    pending = pending[:batch_size]
+
+    logger.info(f"running batch of {len(pending)} companies")
+
+    async with HttpClient(config) as http:
+        for company in pending:
+            await orchestrator.process_company(company, http, run_id)
+
+    # Summary
+    counts = db.get_status_counts()
+    print(f"\nRun {run_id} complete:")
+    for status, count in sorted(counts.items()):
+        print(f"  {status}: {count}")
+
+
 async def _ingest(source: str, config: Config, db: Database) -> None:
     """Ingest companies from a source."""
     # Import adapters here to avoid circular imports
@@ -151,8 +204,7 @@ def main() -> None:
         asyncio.run(_ingest(args.source, config, db))
 
     elif args.command == "run":
-        logger.info(f"run with batch={args.batch} not yet implemented")
-        print(f"Run with batch={args.batch} — not yet implemented (Phase 5)")
+        asyncio.run(_run(args.batch, config, db))
 
     elif args.command == "export":
         logger.info("export not yet implemented")

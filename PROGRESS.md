@@ -59,7 +59,26 @@
 - None
 
 ### Status
-- Phase 4 complete, all ATS providers verified
+- Phase 5 implementation complete, pending full evaluation
+
+## 2026-09-29 — Session 8
+
+### Completed
+- Phase 5: Orchestrator state machine (orchestrator.py)
+- Phase 5: Discovery stages (seed, ats_verify, website, crawl, slug_probe)
+- Phase 5: CLI run command
+- Phase 5: Small batch test — 3 verified, 2 not_found
+- Phase 5: All 66 tests pass
+
+### Next tasks
+- Run full evaluation
+- CHECKPOINT 3
+
+### Open questions
+- None
+
+### Status
+- Phase 5 implementation complete, pending full evaluation
 
 ## 2026-09-29 — Session 7
 

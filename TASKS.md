@@ -46,10 +46,11 @@
 - [x] Mark providers as verified after live tests
 
 ## Phase 5 — Deterministic ladder and orchestrator
-- [ ] Build stages 1-5
-- [ ] Build state machine
-- [ ] Build checkpoints, retries, review queue
-- [ ] Run evaluation
+- [x] Build stages 1-5 (seed, ats_verify, website, crawl, slug_probe)
+- [x] Build state machine (orchestrator.py)
+- [x] Build checkpoints, retries, review queue
+- [x] Run small batch (5 companies) — 3 verified, 2 not_found
+- [ ] Run full evaluation
 - [ ] **CHECKPOINT 3** — results by stage, evaluation metrics
 
 ## Phase 6 — Headless rendering (stage 6)
