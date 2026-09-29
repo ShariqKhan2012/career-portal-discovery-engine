@@ -179,6 +179,14 @@ def main() -> None:
     run_parser = subparsers.add_parser("run", help="Run the discovery pipeline")
     run_parser.add_argument("--batch", type=int, default=25, help="Batch size")
 
+    # --- agent-next ---
+    agent_next_parser = subparsers.add_parser("agent-next", help="Pull the next company for research")
+    agent_next_parser.add_argument("--company", required=True, help="Company ID")
+
+    # --- agent-submit ---
+    agent_submit_parser = subparsers.add_parser("agent-submit", help="Submit a research result")
+    agent_submit_parser.add_argument("--file", required=True, help="Path to JSON file with the result")
+
     # --- export ---
     subparsers.add_parser("export", help="Export results")
 
@@ -205,6 +213,21 @@ def main() -> None:
 
     elif args.command == "run":
         asyncio.run(_run(args.batch, config, db))
+
+    elif args.command == "agent-next":
+        from .agent.backend_b import agent_next
+        inp = agent_next(args.company, db)
+        print(inp.model_dump_json(indent=2))
+
+    elif args.command == "agent-submit":
+        import json
+        from .agent.contract import AgentOutput
+        from .agent.backend_b import agent_submit
+        with open(args.file) as f:
+            data = json.load(f)
+        output = AgentOutput(**data)
+        result = agent_submit(output, db)
+        print(json.dumps(result, indent=2))
 
     elif args.command == "export":
         logger.info("export not yet implemented")

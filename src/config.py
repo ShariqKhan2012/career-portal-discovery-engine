@@ -60,7 +60,7 @@ class Config(BaseModel):
     log_level: str = Field(default="INFO")
 
     # --- API keys (loaded from .env, never hardcoded) ---
-    brave_api_key: str = Field(default="")
+    serper_api_key: str = Field(default="")
     openrouter_api_key: str = Field(default="")
     openrouter_model: str = Field(default="anthropic/claude-3-haiku")
 

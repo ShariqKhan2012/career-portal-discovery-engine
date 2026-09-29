@@ -60,9 +60,11 @@
 - [ ] **CHECKPOINT 4** — representative successes and failures
 
 ## Phase 7 — AI research
-- [ ] Build submission contract
-- [ ] Build Backend B (operator agent)
-- [ ] Run interactive batch
+- [x] Build submission contract (src/agent/contract.py)
+- [x] Build Backend B (operator agent) (src/agent/backend_b.py)
+- [x] Build search tool (Serper) (src/agent/search.py)
+- [x] Add agent-next and agent-submit CLI commands
+- [x] Run interactive batch (ably: verified via Greenhouse board)
 - [ ] Run evaluation
 - [ ] **CHECKPOINT 5** — improvement over Phase 5, tool usage, budgets
 

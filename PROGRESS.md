@@ -76,7 +76,43 @@
 - None
 
 ### Status
-- Phase 6 implementation complete, pending live test
+- Phase 7 interactive batch complete, pending evaluation
+
+## 2026-09-29 — Session 12
+
+### Completed
+- Phase 7: Interactive batch — ably verified via Greenhouse board (5 jobs)
+- Phase 7: Demonstrated operator agent workflow (agent-next → research → agent-submit)
+- Phase 7: Serper search integration working
+
+### Next tasks
+- Run evaluation
+- CHECKPOINT 5
+
+### Open questions
+- None
+
+### Status
+- Phase 7 interactive batch complete, pending evaluation
+
+## 2026-09-29 — Session 11
+
+### Completed
+- Phase 7: Submission contract (src/agent/contract.py)
+- Phase 7: Backend B operator agent (src/agent/backend_b.py)
+- Phase 7: Serper search tool (src/agent/search.py)
+- Phase 7: agent-next and agent-submit CLI commands
+- Phase 7: All 73 tests pass
+
+### Next tasks
+- Run interactive batch
+- CHECKPOINT 5
+
+### Open questions
+- None
+
+### Status
+- Phase 7 implementation complete, pending interactive batch
 
 ## 2026-09-29 — Session 10
 
