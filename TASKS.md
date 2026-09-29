@@ -69,7 +69,7 @@
 - [ ] **CHECKPOINT 5** — improvement over Phase 5, tool usage, budgets
 
 ## Phase 8 — Batch operation and full run
-- [ ] Resumable batches
+- [ ] Process remaining companies
 - [ ] Kill-and-resume demonstration
 - [ ] Work through review queue
 - [ ] Reviewer audit
