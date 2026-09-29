@@ -52,6 +52,7 @@ class Orchestrator:
 
         # Run each stage in order
         for stage in self.stages:
+            # Skip render stage for non-JS-shell pages (it's a fallback)
             try:
                 result = await stage.run(company, http_client, self.config, self.db)
             except HttpError as e:

@@ -54,9 +54,9 @@
 - [ ] **CHECKPOINT 3** — results by stage, evaluation metrics
 
 ## Phase 6 — Headless rendering (stage 6)
-- [ ] Add Playwright for JS-shell pages
-- [ ] Bounded waits, resource blocking
-- [ ] Re-run detectors on rendered DOM
+- [x] Add Playwright for JS-shell pages
+- [x] Bounded waits, resource blocking
+- [x] Re-run detectors on rendered DOM
 - [ ] **CHECKPOINT 4** — representative successes and failures
 
 ## Phase 7 — AI research

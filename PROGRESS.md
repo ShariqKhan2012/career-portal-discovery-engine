@@ -59,7 +59,42 @@
 - None
 
 ### Status
-- Phase 5 implementation complete, pending full evaluation
+- Phase 5 complete, CHECKPOINT 3 approved
+
+## 2026-09-29 — Session 9
+
+### Completed
+- Phase 5: Full evaluation run — 502/884 companies processed
+- Phase 5: 234 verified, 144 needs_review, 123 not_found
+- Phase 5: User verified results by querying database directly
+- Phase 5: CHECKPOINT 3 approved
+
+### Next tasks
+- Phase 6: Headless rendering (stage 6)
+
+### Open questions
+- None
+
+### Status
+- Phase 6 implementation complete, pending live test
+
+## 2026-09-29 — Session 10
+
+### Completed
+- Phase 6: Playwright installed with Chromium
+- Phase 6: Render stage (src/stages/render.py)
+- Phase 6: Bounded waits, resource blocking, ATS embed detection
+- Phase 6: All 69 tests pass
+
+### Next tasks
+- Live test of render stage on a JS-heavy page
+- CHECKPOINT 4
+
+### Open questions
+- None
+
+### Status
+- Phase 6 implementation complete, pending live test
 
 ## 2026-09-29 — Session 8
 
