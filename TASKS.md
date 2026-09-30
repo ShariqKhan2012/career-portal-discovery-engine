@@ -76,11 +76,11 @@
 - [ ] **CHECKPOINT 6** — status distribution, yield, unresolved cases
 
 ## Phase 9 — Exports, documentation, and handoff
-- [ ] CSV, JSON, XLSX exports
-- [ ] report.md
-- [ ] README.md, docs/architecture.md, data-model.md, operations.md
-- [ ] Confirm AGENTS.md matches reality
-- [ ] **CHECKPOINT 7**
+- [x] CSV, JSON, XLSX exports
+- [x] report.md
+- [x] README.md, docs/architecture.md, data-model.md, operations.md
+- [x] Confirm AGENTS.md matches reality
+- [x] **CHECKPOINT 7** — approved
 
 ## Phase 10 — Refresh mode
 - [ ] Process new directory entries

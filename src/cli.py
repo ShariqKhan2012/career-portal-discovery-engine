@@ -190,6 +190,9 @@ def main() -> None:
     # --- export ---
     subparsers.add_parser("export", help="Export results")
 
+    # --- report ---
+    subparsers.add_parser("report", help="Generate report.md")
+
     args = parser.parse_args()
 
     if not args.command:
@@ -230,8 +233,16 @@ def main() -> None:
         print(json.dumps(result, indent=2))
 
     elif args.command == "export":
-        logger.info("export not yet implemented")
-        print("Export — not yet implemented (Phase 9)")
+        from .export import export_csv, export_json, export_xlsx
+        export_csv(db, "careers.csv")
+        export_json(db, "careers.json")
+        export_xlsx(db, "careers.xlsx")
+        print("Exported to careers.csv, careers.json, careers.xlsx")
+
+    elif args.command == "report":
+        from .report import generate_report
+        generate_report(db, "report.md")
+        print("Report generated at report.md")
 
     db.close()
 

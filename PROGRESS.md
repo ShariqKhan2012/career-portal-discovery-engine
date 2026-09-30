@@ -92,7 +92,42 @@
 - None
 
 ### Status
-- Starting Phase 8
+- Phase 8 complete, starting Phase 9
+
+## 2026-09-29 — Session 14
+
+### Completed
+- Phase 8: Full run complete — 884 companies processed
+- Phase 8: 401 verified, 267 needs_review, 213 not_found
+- Phase 8: Review queue — 5 companies resolved via operator agent
+- Phase 8: CHECKPOINT 6 approved
+
+### Next tasks
+- Phase 9: Exports, documentation, and handoff
+
+### Open questions
+- None
+
+### Status
+- Phase 9 complete, CHECKPOINT 7 approved
+
+## 2026-09-29 — Session 15
+
+### Completed
+- Phase 9: Exports (careers.csv, careers.json, careers.xlsx)
+- Phase 9: report.md generated
+- Phase 9: README.md, docs/architecture.md, docs/data-model.md, docs/operations.md
+- Phase 9: All 76 tests pass
+- Phase 9: CHECKPOINT 7 approved
+
+### Next tasks
+- Phase 10: Refresh mode (future)
+
+### Open questions
+- None
+
+### Status
+- Phase 9 complete, CHECKPOINT 7 approved
 
 ## 2026-09-29 — Session 12
 
