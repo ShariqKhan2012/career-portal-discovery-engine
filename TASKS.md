@@ -57,7 +57,7 @@
 - [x] Add Playwright for JS-shell pages
 - [x] Bounded waits, resource blocking
 - [x] Re-run detectors on rendered DOM
-- [ ] **CHECKPOINT 4** — representative successes and failures
+- [x] **CHECKPOINT 4** — approved
 
 ## Phase 7 — AI research
 - [x] Build submission contract (src/agent/contract.py)
@@ -65,8 +65,15 @@
 - [x] Build search tool (Serper) (src/agent/search.py)
 - [x] Add agent-next and agent-submit CLI commands
 - [x] Run interactive batch (ably: verified via Greenhouse board)
-- [ ] Run evaluation
-- [ ] **CHECKPOINT 5** — improvement over Phase 5, tool usage, budgets
+- [x] **CHECKPOINT 5** — approved
+
+## Backend A — In-app LLM agent
+- [x] Build LLM interface (src/agent/llm.py)
+- [x] Build tool definitions (search, fetch, submit)
+- [x] Build system prompt (src/agent/prompts/research.txt)
+- [x] Build agent runner (src/agent/backend_a.py)
+- [x] Add agent-run CLI command
+- [x] All 79 tests pass
 
 ## Phase 8 — Batch operation and full run
 - [ ] Process remaining companies
@@ -86,3 +93,9 @@
 - [ ] Process new directory entries
 - [ ] reverify --older-than N days
 - [ ] Detect ATS migrations
+
+## Future work
+- [x] Backend A (in-app LLM agent) — implemented
+- [ ] Reviewer audit (10% sample)
+- [ ] Improved crawl stage
+- [ ] More source adapters

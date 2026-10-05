@@ -187,6 +187,10 @@ def main() -> None:
     agent_submit_parser = subparsers.add_parser("agent-submit", help="Submit a research result")
     agent_submit_parser.add_argument("--file", required=True, help="Path to JSON file with the result")
 
+    # --- agent-run ---
+    agent_run_parser = subparsers.add_parser("agent-run", help="Run the in-app LLM agent on a company")
+    agent_run_parser.add_argument("--company", required=True, help="Company ID")
+
     # --- export ---
     subparsers.add_parser("export", help="Export results")
 
@@ -231,6 +235,13 @@ def main() -> None:
         output = AgentOutput(**data)
         result = agent_submit(output, db)
         print(json.dumps(result, indent=2))
+
+    elif args.command == "agent-run":
+        from .agent.backend_b import agent_next
+        from .agent.backend_a import run_agent
+        inp = agent_next(args.company, db)
+        result = asyncio.run(run_agent(inp, config, HttpClient(config)))
+        print(result.model_dump_json(indent=2))
 
     elif args.command == "export":
         from .export import export_csv, export_json, export_xlsx
